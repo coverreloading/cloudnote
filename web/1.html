@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="application/javascript">
+    function submit(url, data, callable) {
+        var xhr = new XMLHttpRequest;
+
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === XMLHttpReques.DONE) {
+                console.log('xhr ok', xhr.responseText);
+            };
+        }
+
+        xhr.open("POST", url, true);
+        xhr.send(data);
+    }
+
+    submit("index.html", "dddd");
+
+</script>
+<body>
+
+</body>
+</html>

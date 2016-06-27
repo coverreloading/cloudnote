@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="css">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/cloudnote_war_exploded/css.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
