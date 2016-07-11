@@ -13,7 +13,7 @@
         <id name="id" column="id">
             <!--<generator class="native"/>-->
             <!--assigned 指 id可由用户指定 native数据库自动生成-->
-            <generator class="assigned" />
+            <generator class="native" />
         </id>
         <!-- 普通属性 -->
         <!-- property标签:映射类中的普通属性 name:类中的属性名称, column:表中字段名称 -->

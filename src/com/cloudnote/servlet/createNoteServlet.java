@@ -41,6 +41,8 @@ public class createNoteServlet extends HttpServlet {
         userNote.setNoteName("新笔记"+time);
         long data = new Date().getTime()-1300000000000L + new Random().nextInt(1000);
         userNote.setId(data);
+        userNote.setNoteTime(time);
+        req.getSession().setAttribute("chooseNote",userNote);
         // 保存笔记
         session.save(userNote);
         // 更新session

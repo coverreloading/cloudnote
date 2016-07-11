@@ -77,22 +77,43 @@
                             <a class="btn btn-danger" role="button"
                                href=${pageContext.request.contextPath}"delNoteServlet?noteId=${entry.key}&userId=${user.id}">X</a>
                             <a class="btn btn-info" role="button"
-                               href=${pageContext.request.contextPath}"shareNoteServlet?noteId=${entry.key}&userId=${user.id}"target="_blank">S</a>
+                               href=${pageContext.request.contextPath}"shareNoteServlet?noteId=${entry.key}&userId=${user.id}"
+                               target="_blank">S</a>
                             <%--转post试验--%>
                             <%--<form method="post" action=${pageContext.request.contextPath}"chooseNoteServlet">--%>
-                                <%--<input id="${entry.key}" name="${entry.key}" type="hidden" value="${entry.key}">--%>
-                                <%--<input id="${entry.value}" name="${entry.value}" type="hidden" value="${entry.value}">--%>
+                            <%--<input id="${entry.key}" name="${entry.key}" type="hidden" value="${entry.key}">--%>
+                            <%--<input id="${entry.value}" name="${entry.value}" type="hidden" value="${entry.value}">--%>
                             <%--</form>--%>
                             </li>
                         </c:forEach>
                     </ul>
                 </div>
             </div>
+            <div id="createbutton2" class="bg-primary">
+                <form action="${pageContext.request.contextPath}/upLoadServlet" method="post"
+                      enctype="multipart/form-data">
+                    <div id="filebutton" class="bg-primary">
+                        <div class="buttoncontent ">
+                            <input class="btn" type="file" id="file" name="file">
+                            <input type="submit" class="btn btn-success">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
             <div id="leftfile" class="btn-primary" style="overflow: auto">
+
+
                 <div class="buttoncontent">
                     <ul>
-                        <c:forEach var="entry" items="${userFileMap}">
-                            　　<li style="width: 250px;"><a class="btn btn-default btn-block" role="button">${entry.value}</a></li>
+                        <c:forEach var="UserFile" items="${userFiles}">
+                            <br>
+                            <li>
+                                　　 <a class="btn btn-default " role="button"
+                                      href=${UserFile.fileUrl}>${UserFile.fileName}</a>
+                                <a class="btn btn-danger" role="button"
+                                   href=${pageContext.request.contextPath}"delFileServlet?fileId=${UserFile.id}&userId=${user.id}&fileUrl=${UserFile.fileUrl}">X</a>
+                            </li>
                         </c:forEach>
                     </ul>
                 </div>

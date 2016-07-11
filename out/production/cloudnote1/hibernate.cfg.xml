@@ -14,7 +14,7 @@
             jdbc:mysql://localhost/cloudnote?characterEncoding=UTF-8
         </property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">123456</property>
+        <property name="hibernate.connection.password">root</property>
         <!-- Hibernate的方言 -->
         <!-- 生成底层SQL不同的 -->
         <property name="hibernate.dialect">

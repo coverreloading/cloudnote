@@ -72,14 +72,14 @@ public class test {
         org.hibernate.classic.Session session = HibernateUtils.openSession();
         Transaction tx = session.beginTransaction();
 
-        UserNote userNote = new UserNote();
+        UserFile userfile = new UserFile();
 
-        userNote.setUserId(20);
+        userfile.setFileName("123");
+        userfile.setFileUrl("321");
 
 
-        userNote.setNoteName("测试5");
-        userNote.setContent("zxcvb");
-        session.save(userNote);
+
+        session.save(userfile);
 
 
         tx.commit();
@@ -92,7 +92,6 @@ public class test {
         Transaction tx = session.beginTransaction();
 
         UserFile userFile = new UserFile();
-        userFile.setUserId(20);
         userFile.setFileName("测试2");
         userFile.setContent("23333333");
         userFile.setFileUrl("aaa");
