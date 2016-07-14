@@ -102,17 +102,17 @@
             </div>
 
             <div id="leftfile" class="btn-primary" style="overflow: auto">
-
-
                 <div class="buttoncontent">
                     <ul>
                         <c:forEach var="UserFile" items="${userFiles}">
+                            <%--<c:url value="/downloadFileServlet" var="downurl">--%>
+                                <%--<c:param name="filename" value="${UserFile.key}"></c:param>--%>
+                            <%--</c:url>--%>
                             <br>
                             <li>
-                                　　 <a class="btn btn-default " role="button"
-                                      href=${UserFile.fileUrl}>${UserFile.fileName}</a>
-                                <a class="btn btn-danger" role="button"
-                                   href=${pageContext.request.contextPath}"delFileServlet?fileId=${UserFile.id}&userId=${user.id}&fileUrl=${UserFile.fileUrl}">X</a>
+                                    <%--<a class="btn btn-default " role="button" href=${UserFile.fileUrl}>${UserFile.fileName}</a>--%>
+                                <a class="btn btn-default " role="button" href=${pageContext.request.contextPath}"downloadFileServlet?filename=${UserFile.fileName} "target="_blank">${UserFile.fileName}</a>
+                                <a class="btn btn-danger" role="button" href=${pageContext.request.contextPath}"delFileServlet?fileId=${UserFile.id}&userId=${user.id}&fileUrl=${UserFile.fileUrl}">X</a>
                             </li>
                         </c:forEach>
                     </ul>
